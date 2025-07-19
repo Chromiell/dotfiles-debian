@@ -1,0 +1,20 @@
+gamemoderun DXVK_ASYNC=1 WINE_FULLSCREEN_FSR_MODE=quality %command%
+
+
+gamemoderun gamescope --prefer-vk-device 1002:164c -h 720 -H 1080 -U -f -r 45 -- bash -c "mangoapp & %command% ; kill -s TERM \$(jobs -pr)"
+
+gamemoderun __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia gamescope --prefer-vk-device 1002:164c -h 720 -H 1080 -U -f -r 45 -- glxgears
+
+
+gamemoderun DXVK_ASYNC=1 WINE_FULLSCREEN_FSR_MODE=quality MANGOHUD=1 %command%
+
+ProtonGE 7-43 Immortals Fenyx Rising
+Proton 7.0rc3-GE-1 Final Fantasy XIII
+
+INTEL_DEBUG=noccs gamescope --prefer-vk-device 8086:9bc4 -b -h 720 -H 1080 -U -- %command%
+
+INTEL_DEBUG=noccs gamescope --prefer-vk-device 8086:9bc4 --force-grab-cursor -f -w 1280 -h 720 -W 1920 -H 1080 -F fsr -- brave-browser
+
+mesa_glthread=true INTEL_DEBUG=norbc gamescope --prefer-vk-device 8086:9bc4 --force-grab-cursor -f -w 640 -h 480 -W 1920 -H 1080 -S stretch -F fsr -- brave-browser
+
+MANGOHUD=1 mesa_glthread=true INTEL_DEBUG=norbc gamescope -f -h 1080 -- %command%
