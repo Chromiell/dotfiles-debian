@@ -5,7 +5,10 @@
 !.oh-my-zsh/**
 !.oh-my-zsh/
 !.gitignore
+!.config/
+!.config/alacritty
 !.config/alacritty/alacritty.toml
 !.config/alacritty/alacritty.yml
+!.config/kitty
 !.config/kitty/kitty.conf
 !.config/kitty/kitty-startup.session
